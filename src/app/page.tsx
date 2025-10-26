@@ -1,205 +1,176 @@
 import Image from "next/image";
 
 import FloatingIconsHeroDemo from "@/components/sections/hero-demo";
+import { FeatureSteps } from "@/components/blocks/feature-section";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { FeatureSteps } from "@/components/blocks/feature-section";
-import {
-  CloudCog,
-  Compass,
-  Gauge,
-  Lock,
-  Rocket,
-  Sparkles,
-  Users,
-} from "lucide-react";
+import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
 
 const bentoFeatures = [
   {
     Icon: Sparkles,
-    name: "AI Design Copilot",
+    name: "主流大模型 API 网关",
     description:
-      "Generate production-ready UI blocks with contextual prompts and team-approved design tokens.",
-    href: "#",
-    cta: "Generate a block",
-    background: (
-      <Image
-        src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1400&auto=format&fit=crop"
-        alt="AI generated interface"
-        className="absolute inset-0 h-full w-full object-cover opacity-70"
-        fill
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-    ),
-    className: "lg:row-start-1 lg:row-end-4 lg:col-start-1 lg:col-end-2",
-  },
-  {
-    Icon: Rocket,
-    name: "Workflow Launchpads",
-    description:
-      "Launch complex marketing or product workflows in minutes with reusable templates and smart defaults.",
-    href: "#",
-    cta: "Browse templates",
-    background: (
-      <Image
-        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop"
-        alt="Workflow launch"
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
-        fill
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-    ),
-    className: "lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:col-end-3",
-  },
-  {
-    Icon: Lock,
-    name: "Enterprise Guard",
-    description:
-      "Policy-aware permissions, audit trails, and SOC2-ready safeguards woven into every touchpoint.",
-    href: "#",
-    cta: "Review controls",
-    background: (
-      <Image
-        src="https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=1400&auto=format&fit=crop"
-        alt="Security"
-        className="absolute inset-0 h-full w-full object-cover opacity-55"
-        fill
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-    ),
-    className: "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-  },
-  {
-    Icon: CloudCog,
-    name: "Unified Data Cloud",
-    description:
-      "Streaming connectors with live observability so every team can make confident, real-time decisions.",
-    href: "#",
-    cta: "Connect sources",
+      "统一接口接入 OpenAI、Claude、Gemini、DeepSeek、文心一言等国内外主流模型，支持智能路由、配额管理与安全审计。",
+    href: "#contact",
+    cta: "预约接入",
     background: (
       <Image
         src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop"
-        alt="Cloud services"
+        alt="AI gateway architecture"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+        fill
+        sizes="(max-width: 1024px) 100vw, 34vw"
+      />
+    ),
+    className: "lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3",
+  },
+  {
+    Icon: CreditCard,
+    name: "ChatGPT 订阅正版充值",
+    description:
+      "官方渠道获取 ChatGPT Plus / Team / Enterprise 订阅，支持企业发票、额度分配与用量监控。",
+    href: "#contact",
+    cta: "获取方案",
+    background: (
+      <Image
+        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"
+        alt="Subscription dashboard"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 1024px) 100vw, 30vw"
       />
     ),
     className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
   },
   {
-    Icon: Users,
-    name: "Team Canvas",
+    Icon: Globe2,
+    name: "国内镜像 ChatGPT / Claude",
     description:
-      "Bring product, design, and go-to-market teams together with multiplayer editing and temporal playback.",
-    href: "#",
-    cta: "Open canvas",
+      "多地域高可用镜像节点，提供合规访问链路与全程加密，稳定输出海外模型能力。",
+    href: "#contact",
+    cta: "开通镜像",
     background: (
       <Image
-        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1400&auto=format&fit=crop"
-        alt="Team collaboration"
+        src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=1400&auto=format&fit=crop"
+        alt="Edge network operations"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 1024px) 100vw, 30vw"
       />
     ),
     className: "lg:col-start-3 lg:col-end-4 lg:row-start-2 lg:row-end-3",
   },
   {
-    Icon: Gauge,
-    name: "Insight Pulse",
+    Icon: Code2,
+    name: "Claude Code API 供应",
     description:
-      "A living command center with adaptive dashboards, predictive alerts, and natural language summaries.",
-    href: "#",
-    cta: "Launch command center",
+      "原生对接 Anthropic Claude Code，提供细粒度权限管理、版本控制与企业私有模型联调。",
+    href: "#contact",
+    cta: "申请测试",
     background: (
       <Image
-        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"
-        alt="Analytics dashboard"
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop"
+        alt="Developers collaborating"
+        className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 1024px) 100vw, 70vw"
       />
     ),
-    className: "lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4",
+    className: "lg:col-start-1 lg:col-end-4 lg:row-start-3 lg:row-end-4",
   },
 ];
 
 const featureStepsData = [
   {
     step: "Step 1",
-    title: "Discover the Mission",
+    title: "提交需求并选择模型",
     content:
-      "Map your strategy with tailored guidance, curated inspiration, and an onboarding plan that adapts in real time.",
+      "填写业务场景、并发量与预算，我们会为你匹配最适合的模型组合与计费方案。",
     image:
-      "https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=2070&auto=format&fit=crop",
   },
   {
     step: "Step 2",
-    title: "Prototype the Orbit",
+    title: "沙箱调试与灰度上线",
     content:
-      "Assemble interactive journeys with drag-and-drop blueprints, live data, and AI copilots that assist every teammate.",
+      "使用标准 SDK、国内镜像或专线通道完成调试，专家团队陪伴完成配置与验收。",
     image:
-      "https://images.unsplash.com/photo-1723931464622-b7df7c71e380?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     step: "Step 3",
-    title: "Launch & Amplify",
+    title: "全量运营与持续优化",
     content:
-      "Ship experiences with confidence thanks to guardrails, instant analytics, and adaptive experiments at scale.",
+      "上线后可一键扩容、自动分发额度，并实时查看调用监控与结算报表。",
     image:
-      "https://images.unsplash.com/photo-1725961476494-efa87ae3106a?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 
 const stats = [
-  { label: "Deployments each month", value: "12K", description: "Automations delivered across product, marketing, and data teams." },
-  { label: "Average time saved", value: "38%", description: "Teams ship nearly twice as fast compared to their previous stack." },
-  { label: "Customer NPS", value: "72", description: "Designers, PMs, and engineers love collaborating inside Orbit." },
+  {
+    label: "已对接主流模型",
+    value: "40+",
+    description:
+      "覆盖 OpenAI、Claude、Gemini、DeepSeek、通义千问、文心一言等国内外头部模型。",
+  },
+  {
+    label: "平均接入周期",
+    value: "<3 天",
+    description:
+      "标准 SDK、测试沙箱与专家服务帮助企业 3 天内完成首个应用上线。",
+  },
+  {
+    label: "全年可用性",
+    value: "99.95%",
+    description:
+      "多地域容灾、自动限流与智能路由确保关键业务稳定运行。",
+  },
 ];
 
 const testimonials = [
   {
     quote:
-      "Orbit became our digital mission control. The floating hero is now our in-product welcome experience and it converts 3x better.",
-    author: "Mara Ellison",
-    role: "VP Product, StellarIQ",
+      "借助统一网关，我们在两周内完成了 6 个模型的灰度上线，语义客服的满意度提升了 31%。",
+    author: "李晨",
+    role: "AI 平台负责人 · 北辰科技",
   },
   {
     quote:
-      "We built an entire enablement hub using the bento layout. Design handoff dropped from weeks to days.",
-    author: "Devin Patel",
-    role: "Head of Design Ops, Lumen",
+      "正版充值和账期结算帮助财务合规落地，镜像节点保障了海外模型在国内的超低时延。",
+    author: "赵雯",
+    role: "运营总监 · 星航出行",
   },
   {
     quote:
-      "Feature steps power every onboarding we run. The autoplay progress keeps users engaged through complex workflows.",
-    author: "Joanna Yu",
-    role: "Director of Customer Education, NovaCloud",
+      "Claude Code API 让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
+    author: "郭远",
+    role: "工程效能主管 · 灵动数云",
   },
 ];
 
 const faqs = [
   {
-    question: "Can I customize these sections for my brand?",
+    question: "如何快速接入大模型 API 网关？",
     answer:
-      "Absolutely. Tailwind CSS tokens and shadcn variants make it easy to adapt typography, colors, and spacing to your design system.",
+      "填写业务信息后，我们会在 24 小时内反馈接入方案，并提供 SDK、Postman 集合及沙箱环境协助调试。",
   },
   {
-    question: "Do the floating icons support custom SVGs?",
+    question: "ChatGPT 订阅充值支持哪些套餐？",
     answer:
-      "Yes. Pass any React SVG component via the icons prop. You can mix lucide icons with branded illustrations effortlessly.",
+      "支持 ChatGPT Plus、Team、Enterprise 等官方套餐，提供企业发票及灵活的月/年付费方式。",
   },
   {
-    question: "Is there support for dark mode?",
+    question: "国内镜像服务是否合规？",
     answer:
-      "Dark mode is built into the theme tokens. Toggle a `dark` class at the root to switch the full experience instantly.",
+      "镜像节点部署在合规 IDC，结合身份校验、日志审计与加密传输，满足企业与监管要求。",
   },
   {
-    question: "How do I extend the autoplay behavior?",
+    question: "Claude Code API 是否支持按量计费？",
     answer:
-      "FeatureSteps exposes an `autoPlayInterval` prop and you can hook into `currentFeature` state to build custom controls.",
+      "提供包月与按量两种模式，可根据项目阶段灵活切换，并支持团队级别的配额管理。",
   },
 ];
 
@@ -211,13 +182,16 @@ export default function HomePage() {
       </div>
       <FloatingIconsHeroDemo />
 
-      <section id="features" className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pb-24 -mt-12">
+      <section
+        id="features"
+        className="relative z-10 -mt-12 mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pb-24"
+      >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Shape narratives with responsive, animated canvases
+            打造企业级 AI 服务矩阵
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Combine motion-rich hero sections, adaptive bento grids, and cinematic feature explainers to craft journeys that feel custom-built for every visitor.
+            围绕大模型 API 网关、ChatGPT 订阅充值、国内镜像与 Claude Code API 供应，提供覆盖采购、接入、运营的全链路服务。
           </p>
         </div>
 
@@ -232,8 +206,8 @@ export default function HomePage() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
           <FeatureSteps
             features={featureStepsData}
-            title="Launch a mission in three simple stages"
-            autoPlayInterval={4000}
+            title="三步完成企业级 AI 接入"
+            autoPlayInterval={4500}
             imageHeight="lg:h-[480px]"
           />
 
@@ -254,9 +228,9 @@ export default function HomePage() {
       <section className="px-6 py-24">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-16">
           <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Teams that already orbit with us</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">客户案例与真实反馈</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Designers, developers, and strategists are building immersive onboarding and growth experiences with these modules every day.
+              来自金融、出行、互联网等行业的头部团队，正在使用我们的服务加速 AI 能力落地。
             </p>
           </div>
 
@@ -279,18 +253,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-muted/40 px-6 py-24">
+      <section id="about" className="bg-muted/40 px-6 py-24">
         <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.2fr_1fr]">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold md:text-4xl">Frequently asked questions</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">常见问题解答</h2>
             <p className="text-lg text-muted-foreground">
-              Everything you need to bring these experiences into your product, site, or enablement stack.
+              如果你正在评估大模型接入、订阅采购或镜像服务，这里汇总了最常见的咨询与答复。
             </p>
-            <Button size="lg" className="px-8">
-              Talk to the team
+            <Button size="lg" className="px-8" asChild>
+              <a href="mailto:hello@orbit-ai.com">联系顾问</a>
             </Button>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6" id="contact">
             {faqs.map((faq) => (
               <div key={faq.question} className="rounded-xl border border-border bg-background p-5 shadow-sm">
                 <h3 className="text-lg font-semibold">{faq.question}</h3>
@@ -304,11 +278,11 @@ export default function HomePage() {
       <footer className="border-t border-border/80 bg-background/95 px-6 py-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 text-center md:flex-row md:items-center md:justify-between">
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Orbit Studio. Crafted with motion, clarity, and playful energy.
+            © {new Date().getFullYear()} Orbit AI Gateway · 汇聚全球智算能力，助力企业安全合规地落地大模型。
           </div>
           <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
             <Compass className="h-4 w-4" />
-            Mission Control 4200 · Earth & Beyond
+            Global & Mainland Coverage
           </div>
         </div>
       </footer>

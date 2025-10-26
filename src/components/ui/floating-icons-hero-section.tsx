@@ -3,8 +3,9 @@
 import * as React from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { MorphingText } from "@/components/ui/morphing-text";
+import { cn } from "@/lib/utils";
 
 interface IconProps {
   id: number;
@@ -14,10 +15,14 @@ interface IconProps {
 
 export interface FloatingIconsHeroProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   ctaText: string;
   ctaHref: string;
   icons: IconProps[];
+  badgeText?: string;
+  morphingTexts?: string[];
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
 }
 
 const Icon = ({
@@ -112,59 +117,103 @@ const Icon = ({
 const FloatingIconsHero = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & FloatingIconsHeroProps
->(({ className, title, subtitle, ctaText, ctaHref, icons, ...props }, ref) => {
-  const mouseX = React.useRef(0);
-  const mouseY = React.useRef(0);
+>(
+  (
+    {
+      className,
+      title,
+      subtitle,
+      ctaText,
+      ctaHref,
+      icons,
+      badgeText = "Live Showcase",
+      morphingTexts,
+      secondaryCtaText,
+      secondaryCtaHref,
+      ...props
+    },
+    ref,
+  ) => {
+    const mouseX = React.useRef(0);
+    const mouseY = React.useRef(0);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    mouseX.current = event.clientX;
-    mouseY.current = event.clientY;
-  };
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+      mouseX.current = event.clientX;
+      mouseY.current = event.clientY;
+    };
 
-  return (
-    <section
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      className={cn(
-        "relative flex min-h-[700px] h-screen w-full items-center justify-center overflow-hidden bg-background",
-        className,
-      )}
-      {...props}
-    >
-      <div className="absolute inset-0 h-full w-full">
-        {icons.map((iconData, index) => (
-          <Icon
-            key={iconData.id}
-            mouseX={mouseX}
-            mouseY={mouseY}
-            iconData={iconData}
-            index={index}
-          />
-        ))}
-      </div>
-
-      <div className="relative z-10 px-4 text-center">
-        <p className="mx-auto mb-4 max-w-[180px] rounded-full border border-border/60 bg-background/70 px-4 py-2 text-sm uppercase tracking-[0.4em] text-muted-foreground shadow-sm backdrop-blur-md">
-          Live Showcase
-        </p>
-        <h1 className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
-          {title}
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          {subtitle}
-        </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button asChild size="lg" className="px-8 py-6 text-base font-semibold">
-            <a href={ctaHref}>{ctaText}</a>
-          </Button>
-          <Button variant="outline" size="lg">
-            Explore Components
-          </Button>
+    return (
+      <section
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        className={cn(
+          "relative flex min-h-[700px] h-screen w-full items-center justify-center overflow-hidden bg-background",
+          className,
+        )}
+        {...props}
+      >
+        <div className="absolute inset-0 h-full w-full">
+          {icons.map((iconData, index) => (
+            <Icon
+              key={iconData.id}
+              mouseX={mouseX}
+              mouseY={mouseY}
+              iconData={iconData}
+              index={index}
+            />
+          ))}
         </div>
-      </div>
-    </section>
-  );
-});
+
+        <div className="relative z-10 px-4 text-center">
+          {badgeText ? (
+            <p className="mx-auto mb-6 max-w-[220px] rounded-full border border-border/60 bg-background/70 px-4 py-2 text-xs uppercase tracking-[0.4em] text-muted-foreground shadow-sm backdrop-blur-md md:text-sm">
+              {badgeText}
+            </p>
+          ) : null}
+
+          {morphingTexts?.length ? (
+            <>
+              <div
+                role="heading"
+                aria-level={1}
+                aria-label={morphingTexts.join(" · ")}
+                className="flex justify-center"
+              >
+                <MorphingText texts={morphingTexts} />
+              </div>
+              {title ? (
+                <p className="mx-auto mt-6 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
+                  {title}
+                </p>
+              ) : null}
+            </>
+          ) : (
+            <h1 className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
+              {title}
+            </h1>
+          )}
+
+          {subtitle ? (
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              {subtitle}
+            </p>
+          ) : null}
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Button asChild size="lg" className="px-8 py-6 text-base font-semibold">
+              <a href={ctaHref}>{ctaText}</a>
+            </Button>
+            {secondaryCtaText ? (
+              <Button variant="outline" size="lg" asChild>
+                <a href={secondaryCtaHref ?? "#"}>{secondaryCtaText}</a>
+              </Button>
+            ) : null}
+          </div>
+        </div>
+      </section>
+    );
+  },
+);
 
 FloatingIconsHero.displayName = "FloatingIconsHero";
 
