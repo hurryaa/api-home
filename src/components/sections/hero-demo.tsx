@@ -80,12 +80,12 @@ const demoIcons: FloatingIconsHeroProps["icons"] = [
   { id: 14, icon: XinferenceColor, className: "bottom-[5%] right-[45%]" },
   
 
-  { id: 15, icon: MoonshotColor, className: "top-[25%] right-[20%]" },
-  { id: 16, icon: OpenAIColor, className: "top-[60%] left-[30%]" },
-  { id: 17, icon: XAIColor, className: "top-[35%] right-[12%]" },
-  { id: 18, icon: SunoColor, className: "bottom-[20%] left-[45%]" },
-  { id: 19, icon: MidjourneyColor, className: "top-[15%] left-[50%]" },
-  { id: 20, icon: GrokColor, className: "bottom-[25%] right-[35%]" },
+  { id: 15, icon: Moonshot, className: "top-[25%] right-[20%]" },
+  { id: 16, icon: OpenAI, className: "top-[60%] left-[30%]" },
+  { id: 17, icon: XAI, className: "top-[35%] right-[12%]" },
+  { id: 18, icon: Suno, className: "bottom-[20%] left-[45%]" },
+  { id: 19, icon: Midjourney, className: "top-[15%] left-[50%]" },
+  { id: 20, icon: Grok, className: "bottom-[25%] right-[35%]" },
 ];
 
 export default function FloatingIconsHeroDemo() {
