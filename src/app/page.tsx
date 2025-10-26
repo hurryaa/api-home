@@ -9,6 +9,10 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
+import core1 from "@/components/public/core-1.webp
+import core2 from "@/components/public/core-2.webp
+import core3 from "@/components/public/core-3.webp
+import core4 from "@/components/public/core-4.webp
 
 const bentoFeatures = [
   {
@@ -20,7 +24,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src="/components/public/core-1.webp"
+        src={core1}
         alt="AI gateway architecture"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
         fill
@@ -38,7 +42,7 @@ const bentoFeatures = [
     cta: "快速开始",
     background: (
       <Image
-        src="/components/public/core-2.webp"
+        src={core2}
         alt="Subscription dashboard"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -56,7 +60,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src="/components/public/core-3.webp"
+        src={core3}
         alt="Edge network operations"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
         fill
@@ -74,7 +78,7 @@ const bentoFeatures = [
     cta: "了解更多",
     background: (
       <Image
-        src="/components/public/core-4.webp"
+        src={core4}
         alt="Developers collaborating"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
