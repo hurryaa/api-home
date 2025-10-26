@@ -96,7 +96,7 @@ const Icon = ({
       className={cn("absolute", iconData.className)}
     >
       <motion.div
-        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-border/10 bg-white/90 p-3 shadow-xl backdrop-blur-md dark:bg-zinc-900/90 md:h-20 md:w-20"
+        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-white/20 bg-white p-3 shadow-xl backdrop-blur-md md:h-20 md:w-20"
         animate={{
           y: [0, -8, 0, 8, 0],
           x: [0, 6, 0, -6, 0],
@@ -109,7 +109,7 @@ const Icon = ({
           ease: "easeInOut",
         }}
       >
-        <IconComponent className="h-8 w-8 md:h-10 md:w-10" style={{ color: 'inherit' }} />
+        <IconComponent className="h-8 w-8 md:h-10 md:w-10" />
       </motion.div>
     </motion.div>
   );

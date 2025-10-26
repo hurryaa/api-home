@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import FloatingIconsHeroDemo from "@/components/sections/hero-demo";
 import { FeatureSteps } from "@/components/blocks/feature-section";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -136,20 +137,23 @@ const testimonials = [
   {
     quote:
       "借助统一网关，我们在两周内完成了 6 个模型的灰度上线，语义客服的满意度提升了 31%。",
-    author: "李晨",
-    role: "AI 平台负责人 · 北辰科技",
+    name: "李晨",
+    designation: "AI 平台负责人 · 北辰科技",
+    src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
       "正版充值和账期结算帮助财务合规落地，镜像节点保障了海外模型在国内的超低时延。",
-    author: "赵雯",
-    role: "运营总监 · 星航出行",
+    name: "赵雯",
+    designation: "运营总监 · 星航出行",
+    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
       "Claude Code API 让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
-    author: "郭远",
-    role: "工程效能主管 · 灵动数云",
+    name: "郭远",
+    designation: "工程效能主管 · 灵动数云",
+    src: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -238,22 +242,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.author}
-                className="flex h-full flex-col justify-between rounded-2xl border border-border/70 bg-card/80 p-6 shadow-lg shadow-black/5"
-              >
-                <p className="text-lg italic text-muted-foreground">
-                  “{testimonial.quote}”
-                </p>
-                <div className="mt-6">
-                  <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <AnimatedTestimonials testimonials={testimonials} autoplay className="max-w-6xl" />
         </div>
       </section>
 
