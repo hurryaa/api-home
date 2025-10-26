@@ -69,7 +69,7 @@ const bentoFeatures = [
     Icon: Code2,
     name: "Claude Code API 供应",
     description:
-      "原生对接 Anthropic Claude Code，通过自然语言与电脑本地文件交互，从0开始构建项目，快速完成代码Debug、调优、重构、优化，读取目标文件进行数据分析、整理等",
+      "原生对接 Anthropic Claude Code，通过自然语言与电脑本地文件交互，从0开始构建项目，快速完成代码Debug、调优、重构、优化，读取目标文件进行数据分析、整理等。用自然语言驱动生产力",
     href: "#contact",
     cta: "了解更多",
     background: (
