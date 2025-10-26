@@ -9,10 +9,10 @@ import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
-import core1 from "@/components/public/core-1.webp
-import core2 from "@/components/public/core-2.webp
-import core3 from "@/components/public/core-3.webp
-import core4 from "@/components/public/core-4.webp
+import core1 from "@/components/public/core-1.webp;
+import core2 from "@/components/public/core-2.webp;
+import core3 from "@/components/public/core-3.webp;
+import core4 from "@/components/public/core-4.webp;
 
 const bentoFeatures = [
   {
