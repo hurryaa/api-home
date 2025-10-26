@@ -7,8 +7,8 @@ import "./globals.css";
 const fontSans = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Innovation Orbit",
-  description: "A modern React single page experience showcasing floating hero, bento layouts, and animated feature steps.",
+  title: "GPTW API--汇集全球主流AI大模型，用AI驱动生产力",
+  description: "chatgpt-5,claude code,midjourney api,chatgpt订阅,chatgpt镜像,claude api,ai绘画,gemini api",
 };
 
 export default function RootLayout({
