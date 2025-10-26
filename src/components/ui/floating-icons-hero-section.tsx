@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { useRouter } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { MorphingText } from "@/components/ui/morphing-text";
 import { cn } from "@/lib/utils";
 
@@ -95,7 +96,7 @@ const Icon = ({
       className={cn("absolute", iconData.className)}
     >
       <motion.div
-        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-border/10 bg-card/80 p-3 shadow-xl backdrop-blur-md md:h-20 md:w-20"
+        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-border/10 bg-white/90 p-3 shadow-xl backdrop-blur-md dark:bg-zinc-900/90 md:h-20 md:w-20"
         animate={{
           y: [0, -8, 0, 8, 0],
           x: [0, 6, 0, -6, 0],
@@ -108,7 +109,7 @@ const Icon = ({
           ease: "easeInOut",
         }}
       >
-        <IconComponent className="h-8 w-8 text-foreground md:h-10 md:w-10" />
+        <IconComponent className="h-8 w-8 md:h-10 md:w-10" style={{ color: 'inherit' }} />
       </motion.div>
     </motion.div>
   );
@@ -134,8 +135,21 @@ const FloatingIconsHero = React.forwardRef<
     },
     ref,
   ) => {
+    const router = useRouter();
     const mouseX = React.useRef(0);
     const mouseY = React.useRef(0);
+
+    const navigate = React.useCallback(
+      (href: string) => {
+        if (!href) return;
+        if (href.startsWith("http")) {
+          window.open(href, "_blank", "noopener,noreferrer");
+          return;
+        }
+        router.push(href);
+      },
+      [router],
+    );
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
       mouseX.current = event.clientX;
@@ -200,13 +214,17 @@ const FloatingIconsHero = React.forwardRef<
           ) : null}
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button asChild size="lg" className="px-8 py-6 text-base font-semibold">
-              <a href={ctaHref}>{ctaText}</a>
-            </Button>
+            <InteractiveHoverButton
+              text={ctaText}
+              onClick={() => navigate(ctaHref)}
+              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground md:px-10"
+            />
             {secondaryCtaText ? (
-              <Button variant="outline" size="lg" asChild>
-                <a href={secondaryCtaHref ?? "#"}>{secondaryCtaText}</a>
-              </Button>
+              <InteractiveHoverButton
+                text={secondaryCtaText}
+                onClick={() => navigate(secondaryCtaHref ?? "#")}
+                className="w-auto border border-primary/70 bg-transparent px-8 py-3 text-base text-primary md:px-10"
+              />
             ) : null}
           </div>
         </div>

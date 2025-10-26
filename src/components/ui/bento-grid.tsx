@@ -1,8 +1,10 @@
-import { ReactNode } from "react";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+"use client";
+
+import { ReactNode, useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const BentoGrid = ({
   children,
@@ -39,40 +41,52 @@ const BentoCard = ({
   description: string;
   href: string;
   cta: string;
-}) => (
-  <div
-    key={name}
-    className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
-      "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-      "dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
-      "transform-gpu",
-      className,
-    )}
-  >
-    <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-      <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-300" />
-      <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
-        {name}
-      </h3>
-      <p className="max-w-lg text-neutral-400">{description}</p>
-    </div>
+}) => {
+  const router = useRouter();
 
+  const handleNavigate = useCallback(() => {
+    if (!href) return;
+    if (href.startsWith("http")) {
+      window.open(href, "_blank", "noopener,noreferrer");
+      return;
+    }
+    router.push(href);
+  }, [href, router]);
+
+  return (
     <div
+      key={name}
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+        "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl",
+        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+        "dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "transform-gpu",
+        className,
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
-        <a href={href}>
-          {cta}
-          <ArrowRightIcon className="ml-2 h-4 w-4" />
-        </a>
-      </Button>
+      <div>{background}</div>
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+        <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-300" />
+        <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+          {name}
+        </h3>
+        <p className="max-w-lg text-neutral-400">{description}</p>
+      </div>
+
+      <div
+        className={cn(
+          "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+        )}
+      >
+        <InteractiveHoverButton
+          text={cta}
+          onClick={handleNavigate}
+          className="pointer-events-auto w-40 border border-primary/60 bg-transparent text-sm text-primary"
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
     </div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-  </div>
-);
+  );
+};
 
 export { BentoCard, BentoGrid };

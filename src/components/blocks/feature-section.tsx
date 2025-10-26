@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 
@@ -30,9 +30,25 @@ export function FeatureSteps({
 }: FeatureStepsProps) {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleStepClick = (index: number) => {
+    setCurrentFeature(index);
+    setProgress(0);
+    setIsPaused(true);
+
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, autoPlayInterval);
+  };
 
   useEffect(() => {
-    if (!features.length) return;
+    if (!features.length || isPaused) return;
 
     const tick = setInterval(() => {
       setProgress((prev) => {
@@ -46,11 +62,21 @@ export function FeatureSteps({
     }, 100);
 
     return () => clearInterval(tick);
-  }, [features.length, autoPlayInterval]);
+  }, [features.length, autoPlayInterval, isPaused]);
 
   useEffect(() => {
-    setProgress(0);
-  }, [currentFeature]);
+    if (!isPaused) {
+      setProgress(0);
+    }
+  }, [currentFeature, isPaused]);
+
+  useEffect(() => {
+    return () => {
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className={cn("p-8 md:p-12", className)}>
@@ -64,20 +90,32 @@ export function FeatureSteps({
             {features.map((feature, index) => (
               <motion.div
                 key={feature.step}
-                className="flex items-center gap-6 md:gap-8"
+                className="flex cursor-pointer items-center gap-6 transition-all hover:scale-[1.02] md:gap-8"
                 initial={{ opacity: 0.3 }}
                 animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                 transition={{ duration: 0.5 }}
+                onClick={() => handleStepClick(index)}
+                onMouseEnter={() => handleStepClick(index)}
+                onFocus={() => handleStepClick(index)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    handleStepClick(index);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-current={index === currentFeature}
               >
                 <motion.div
                   className={cn(
-                    "flex h-8 w-8 items-center justify-center rounded-full border-2 md:h-10 md:w-10",
+                    "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-all md:h-10 md:w-10",
                     index === currentFeature
-                      ? "scale-110 border-primary bg-primary text-primary-foreground"
-                      : "border-muted-foreground bg-muted",
+                      ? "scale-110 border-primary bg-primary text-primary-foreground shadow-lg shadow-primary/30"
+                      : "border-muted-foreground/50 bg-muted hover:border-primary/40 hover:bg-muted/80",
                   )}
                 >
-                  {index <= currentFeature ? (
+                  {index < currentFeature ? (
                     <span className="text-lg font-bold">✓</span>
                   ) : (
                     <span className="text-lg font-semibold">{index + 1}</span>

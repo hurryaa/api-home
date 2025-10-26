@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 
 import FloatingIconsHeroDemo from "@/components/sections/hero-demo";
 import { FeatureSteps } from "@/components/blocks/feature-section";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { Button } from "@/components/ui/button";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
 
@@ -182,9 +184,11 @@ export default function HomePage() {
       </div>
       <FloatingIconsHeroDemo />
 
+      <div className="h-24 bg-gradient-to-b from-background to-muted/20 md:h-32" />
+
       <section
         id="features"
-        className="relative z-10 -mt-12 mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pb-24"
+        className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 pb-24"
       >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -260,9 +264,11 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground">
               如果你正在评估大模型接入、订阅采购或镜像服务，这里汇总了最常见的咨询与答复。
             </p>
-            <Button size="lg" className="px-8" asChild>
-              <a href="mailto:hello@orbit-ai.com">联系顾问</a>
-            </Button>
+            <InteractiveHoverButton
+              text="联系顾问"
+              onClick={() => (window.location.href = "mailto:hello@orbit-ai.com")}
+              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground"
+            />
           </div>
           <div className="space-y-6" id="contact">
             {faqs.map((faq) => (
