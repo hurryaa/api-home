@@ -110,7 +110,7 @@ const featureStepsData = [
     step: "Step 3",
     title: "开始开发或接入现成应用",
     content:
-      "查看“开发文档”，复制本站域名为API_base_url，您的密钥为API_Key
+      "查看“开发文档”，复制本站域名为API_base_url，您的密钥为API_Key",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
   },
