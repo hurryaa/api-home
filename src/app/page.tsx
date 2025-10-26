@@ -38,7 +38,7 @@ const bentoFeatures = [
     cta: "快速开始",
     background: (
       <Image
-        src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"
+        src="/components/public/core-2.webp"
         alt="Subscription dashboard"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -56,7 +56,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=1400&auto=format&fit=crop"
+        src="/components/public/core-3.webp"
         alt="Edge network operations"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
         fill
@@ -74,7 +74,7 @@ const bentoFeatures = [
     cta: "了解更多",
     background: (
       <Image
-        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop"
+        src="/components/public/core-4.webp"
         alt="Developers collaborating"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
