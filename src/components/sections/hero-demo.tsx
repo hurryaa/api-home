@@ -90,21 +90,23 @@ const demoIcons: FloatingIconsHeroProps["icons"] = [
 
 export default function FloatingIconsHeroDemo() {
   const morphingTexts = [
-    "主流大模型 API 网关",
+    "统一的大模型接口网关",
     "ChatGPT 订阅正版充值",
-    "国内镜像 ChatGPT · Claude",
-    "Claude Code API 供应",
+    "一套代码调用多个模型",
+    "支持 Claude Code 等",
+    "按量计费 / 包月计费",
+    "为开发者服务",
   ];
 
   return (
     <FloatingIconsHero
-      title="一套接入，连通全球与国内顶级大模型"
-      subtitle="我们为企业提供统一的 AI API 网关，覆盖国内外领先模型的订阅、镜像与代码能力，助力业务快速上线。"
+      title="接入全球大模型，开发只认 GPTW API"
+      subtitle="我们为企业提供统一的 AI API 网关，覆盖国内外多种领先模型，助力业务快速上线。"
       ctaText="立即体验"
-      ctaHref="#features"
-      secondaryCtaText="了解更多"
-      secondaryCtaHref="#about"
-      badgeText="旗舰服务矩阵"
+      ctaHref="https://api.pro365.top/login"
+      secondaryCtaText="开发文档"
+      secondaryCtaHref="https://api-pro365.apifox.cn/"
+      badgeText="99.9%可用性保障"
       morphingTexts={morphingTexts}
       icons={demoIcons}
     />
