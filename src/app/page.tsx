@@ -13,11 +13,11 @@ import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
 const bentoFeatures = [
   {
     Icon: Sparkles,
-    name: "主流大模型 API 网关",
+    name: "多模态-视频、图片、文档理解与分析",
     description:
-      "统一接口接入 OpenAI、Claude、Gemini、DeepSeek、文心一言等国内外主流模型，支持智能路由、配额管理与安全审计。",
-    href: "#contact",
-    cta: "预约接入",
+      "提供多个顶尖多模态AI大模型，覆盖视频理解、图片识别、数据分析、PDF文档解读等，为不同场景提供一站式解决方案",
+    href: "https://api.pro365.top/login",
+    cta: "立即注册",
     background: (
       <Image
         src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop"
@@ -31,11 +31,11 @@ const bentoFeatures = [
   },
   {
     Icon: CreditCard,
-    name: "ChatGPT 订阅正版充值",
+    name: "主流大模型灵活接入",
     description:
-      "官方渠道获取 ChatGPT Plus / Team / Enterprise 订阅，支持企业发票、额度分配与用量监控。",
-    href: "#contact",
-    cta: "获取方案",
+      "集成众多顶尖模型，低成本、快速体验多种模型的AIGC能力，为自己的产品、知识库、工作流等带来更多选择",
+    href: "https://api.pro365.top/login",
+    cta: "快速开始",
     background: (
       <Image
         src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop"
@@ -49,11 +49,11 @@ const bentoFeatures = [
   },
   {
     Icon: Globe2,
-    name: "国内镜像 ChatGPT / Claude",
+    name: "接入现成产品、开源项目",
     description:
-      "多地域高可用镜像节点，提供合规访问链路与全程加密，稳定输出海外模型能力。",
-    href: "#contact",
-    cta: "开通镜像",
+      "多种主流API格式支持，包含OpenAI、Claude、Gemini、Midjourney等，适配绝大多数现成的AI产品或开源项目",
+    href: "https://api.pro365.top/login",
+    cta: "立即注册",
     background: (
       <Image
         src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=1400&auto=format&fit=crop"
@@ -69,9 +69,9 @@ const bentoFeatures = [
     Icon: Code2,
     name: "Claude Code API 供应",
     description:
-      "原生对接 Anthropic Claude Code，提供细粒度权限管理、版本控制与企业私有模型联调。",
+      "原生对接 Anthropic Claude Code，通过自然语言与电脑本地文件交互，从0开始构建项目，快速完成代码Debug、调优、重构、优化，读取目标文件进行数据分析、整理等",
     href: "#contact",
-    cta: "申请测试",
+    cta: "了解更多",
     background: (
       <Image
         src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop"
