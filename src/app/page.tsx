@@ -92,25 +92,25 @@ const bentoFeatures = [
 const featureStepsData = [
   {
     step: "Step 1",
-    title: "提交需求并选择模型",
+    title: "完成注册并添加客服微信",
     content:
-      "填写业务场景、并发量与预算，我们会为你匹配最适合的模型组合与计费方案。",
+      "根据业务场景、并发量与预算，我们会为你匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
     image:
       "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=2070&auto=format&fit=crop",
   },
   {
     step: "Step 2",
-    title: "沙箱调试与灰度上线",
+    title: "生成第一个API Key",
     content:
-      "使用标准 SDK、国内镜像或专线通道完成调试，专家团队陪伴完成配置与验收。",
+      "点击“控制台-令牌管理”，添加您的第一个密钥，这时您可以在“操练场”或“便捷对话“开始使用。",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     step: "Step 3",
-    title: "全量运营与持续优化",
+    title: "开始开发或接入现成应用",
     content:
-      "上线后可一键扩容、自动分发额度，并实时查看调用监控与结算报表。",
+      "查看“开发文档”，复制本站域名为API_base_url，您的密钥为API_Key
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
   },
@@ -118,7 +118,7 @@ const featureStepsData = [
     step: "Step 4",
     title: "保持余额充足",
     content:
-      "上线后可一键扩容、自动分发额度，并实时查看调用监控与结算报表。",
+      "设置余额预警并保持关注，避免余额不足影响您的应用",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
   },
@@ -127,9 +127,9 @@ const featureStepsData = [
 const stats = [
   {
     label: "已对接主流模型",
-    value: "40+",
+    value: "300+",
     description:
-      "覆盖 OpenAI、Claude、Gemini、DeepSeek、通义千问、文心一言等国内外头部模型。",
+      "覆盖 OpenAI、Claude、Gemini、GLM、Midjourney、Sora等国内外头部AI模型。",
   },
   {
     label: "平均接入周期",
