@@ -96,6 +96,7 @@ export default function FloatingIconsHeroDemo() {
     "支持 Claude Code 等",
     "按量计费 / 包月计费",
     "为开发者服务",
+    "用自然语言驱动生产力",
   ];
 
   return (
