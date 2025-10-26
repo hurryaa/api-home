@@ -32,6 +32,18 @@ npm run dev
 
 访问 [http://localhost:3000](http://localhost:3000) 查看效果。
 
+## 📦 部署
+
+### Vercel 一键部署
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/orbit-ai-gateway)
+
+项目已包含所有必要配置：
+- `.npmrc` - 解决 @lobehub/icons 依赖冲突
+- `next.config.mjs` - 图片域名白名单配置
+
+详见 [DEPLOYMENT.md](./DEPLOYMENT.md) 获取完整部署说明。
+
 ## 📂 项目结构
 
 ```
