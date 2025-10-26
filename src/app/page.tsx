@@ -110,6 +110,14 @@ const featureStepsData = [
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
   },
+  {
+    step: "Step 4",
+    title: "保持余额充足",
+    content:
+      "上线后可一键扩容、自动分发额度，并实时查看调用监控与结算报表。",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+  },
 ];
 
 const stats = [
@@ -121,7 +129,7 @@ const stats = [
   },
   {
     label: "平均接入周期",
-    value: "<3 天",
+    value: "<1 天",
     description:
       "标准 SDK、测试沙箱与专家服务帮助企业 3 天内完成首个应用上线。",
   },
