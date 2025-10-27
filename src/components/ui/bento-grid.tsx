@@ -4,7 +4,7 @@ import { ReactNode, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { FlowButton } from "@/components/ui/flow-button";
 
 const BentoGrid = ({
   children,
@@ -78,10 +78,10 @@ const BentoCard = ({
           "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
         )}
       >
-        <InteractiveHoverButton
+        <FlowButton
           text={cta}
           onClick={handleNavigate}
-          className="pointer-events-auto w-40 border border-primary/60 bg-transparent text-sm text-primary"
+          className="pointer-events-auto"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />

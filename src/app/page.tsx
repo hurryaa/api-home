@@ -6,7 +6,7 @@ import FloatingIconsHeroDemo from "@/components/sections/hero-demo";
 import { FeatureSteps } from "@/components/blocks/feature-section";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { FlowButton } from "@/components/ui/flow-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
 import core1 from "@/components/public/core-1.webp";
@@ -265,10 +265,9 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground">
               如果你正在评估大模型接入、订阅采购或镜像服务，这里汇总了最常见的咨询与答复。
             </p>
-            <InteractiveHoverButton
+            <FlowButton
               text="联系顾问"
               onClick={() => (window.location.href = "mailto:hello@orbit-ai.com")}
-              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground"
             />
           </div>
           <div className="space-y-6" id="contact">

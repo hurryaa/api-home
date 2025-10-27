@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { FlowButton } from "@/components/ui/flow-button";
 import { MorphingText } from "@/components/ui/morphing-text";
 import { cn } from "@/lib/utils";
 
@@ -214,16 +214,14 @@ const FloatingIconsHero = React.forwardRef<
           ) : null}
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <InteractiveHoverButton
+            <FlowButton
               text={ctaText}
               onClick={() => navigate(ctaHref)}
-              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground md:px-10"
             />
             {secondaryCtaText ? (
-              <InteractiveHoverButton
+              <FlowButton
                 text={secondaryCtaText}
                 onClick={() => navigate(secondaryCtaHref ?? "#")}
-                className="w-auto border border-primary/70 bg-transparent px-8 py-3 text-base text-primary md:px-10"
               />
             ) : null}
           </div>
