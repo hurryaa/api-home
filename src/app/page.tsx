@@ -8,6 +8,7 @@ import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { FlowButton } from "@/components/ui/flow-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { WorldMap } from "@/components/ui/world-map";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
 import core1 from "@/components/public/core-1.webp";
 import core2 from "@/components/public/core-2.webp";
@@ -242,6 +243,54 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-muted/40 px-6 py-24">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="mb-12 space-y-4 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">全球服务网络</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              从北京出发，连接全球主要城市。我们的 API 节点遍布世界，为您提供低延迟、高可用的大模型服务。
+            </p>
+          </div>
+          <WorldMap
+            dots={[
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 37.7749, lng: -122.4194, label: "旧金山" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 40.7128, lng: -74.0060, label: "纽约" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 51.5074, lng: -0.1278, label: "伦敦" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 48.8566, lng: 2.3522, label: "巴黎" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 35.6762, lng: 139.6503, label: "东京" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 1.3521, lng: 103.8198, label: "新加坡" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: -33.8688, lng: 151.2093, label: "悉尼" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
+                end: { lat: 55.7558, lng: 37.6173, label: "莫斯科" },
+              },
+            ]}
+            lineColor="#0ea5e9"
+          />
         </div>
       </section>
 
