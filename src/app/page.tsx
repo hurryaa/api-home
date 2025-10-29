@@ -249,46 +249,53 @@ export default function HomePage() {
       <section className="bg-muted/40 px-6 py-24">
         <div className="mx-auto w-full max-w-7xl">
           <div className="mb-12 space-y-4 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">全球服务网络</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">全球基础设施保障</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              从北京出发，连接全球主要城市。我们的 API 节点遍布世界，为您提供低延迟、高可用的大模型服务。
+              我们的平台在全球部署，提供99.9%可用性保障，为您提供低延迟、高可用的大模型服务。
             </p>
           </div>
           <WorldMap
             dots={[
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 37.7749, lng: -122.4194, label: "旧金山" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 37.7749, lng: -122.4194, label: "San Francisco" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 40.7128, lng: -74.0060, label: "纽约" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 40.7128, lng: -74.0060, label: "New York" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 51.5074, lng: -0.1278, label: "伦敦" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 51.5074, lng: -0.1278, label: "London" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 48.8566, lng: 2.3522, label: "巴黎" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 35.6762, lng: 139.6503, label: "东京" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 1.3521, lng: 103.8198, label: "新加坡" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: -33.8688, lng: 151.2093, label: "悉尼" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 55.7558, lng: 37.6173, label: "Moscow" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "北京" },
-                end: { lat: 55.7558, lng: 37.6173, label: "莫斯科" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: 30.0444, lng: 31.2357, label: "Egypt" },
               },
-            ]}
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -26.2041,lng: 28.0473, label: "South Africa" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -23.5505,lng: -46.6333, label: "Brazil" },
+              },
             lineColor="#0ea5e9"
           />
         </div>
