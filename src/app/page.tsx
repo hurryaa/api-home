@@ -95,7 +95,7 @@ const featureStepsData = [
     step: "Step 1",
     title: "完成注册并添加客服微信",
     content:
-      "根据业务场景、并发量与预算，我们会为你匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
+      "根据业务场景、并发量与预算，我们会为您匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
     image:
       "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=2070&auto=format&fit=crop",
   },
@@ -273,6 +273,10 @@ export default function HomePage() {
                 end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
               },
               {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -23.5505,lng: -46.6333, label: "Brazil" },
+              },
+              {
                 start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
                 end: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
               },
@@ -292,10 +296,6 @@ export default function HomePage() {
                 start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
                 end: { lat: -26.2041,lng: 28.0473, label: "South Africa" },
               },
-              {
-                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
-                end: { lat: -23.5505,lng: -46.6333, label: "Brazil" },
-              },
               ]}
             lineColor="#0ea5e9"
           />
@@ -307,7 +307,7 @@ export default function HomePage() {
           <div className="space-y-4 text-center">
             <h2 className="text-3xl font-bold md:text-4xl">客户案例与真实反馈</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              来自金融、出行、互联网等行业的头部团队，正在使用我们的服务加速 AI 能力落地。
+              来自科研、培训、互联网等行业的头部团队，正在使用我们的服务加速 AI 能力落地。
             </p>
           </div>
 
@@ -320,11 +320,11 @@ export default function HomePage() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold md:text-4xl">常见问题解答</h2>
             <p className="text-lg text-muted-foreground">
-              如果你正在评估大模型接入、订阅采购或镜像服务，这里汇总了最常见的咨询与答复。
+              如果您正在评估大模型接入，这里汇总了最常见的咨询与答复。
             </p>
             <FlowButton
-              text="联系顾问"
-              onClick={() => (window.location.href = "mailto:hello@orbit-ai.com")}
+              text="联系客服"
+              onClick={() => (window.location.href = "微信：office980")}
             />
           </div>
           <div className="space-y-6" id="contact">
