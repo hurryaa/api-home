@@ -149,23 +149,23 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "借助统一网关，我们在两周内完成了 6 个模型的灰度上线，语义客服的满意度提升了 31%。",
+      "GPTW API让我们的AI产品开发成本降低了70%。统一的API接口让我们能够快速切换不同的AI模型，而不需要修改代码。99.9%的可用性保障也让我们非常放心。真正做到了为开发者而生！",
     name: "李晨",
-    designation: "AI 平台负责人 · 北辰科技",
+    designation: "AI 平台负责人 · 科技行业",
     src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
-      "正版充值和账期结算帮助财务合规落地，镜像节点保障了海外模型在国内的超低时延。",
+      "从官方API迁移到APICore.ai只用了5分钟，每月节省了数万元的API、税费等费用。也规避了官方封号的风险，技术支持团队非常专业。",
     name: "赵雯",
-    designation: "运营总监 · 星航出行",
+    designation: "IT部门总监 · 科技行业",
     src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
-      "Claude Code API 让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
+      "Claude Code让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
     name: "郭远",
-    designation: "工程效能主管 · 灵动数云",
+    designation: "工程效能主管 · 教育培训行业",
     src: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
   },
 ];
