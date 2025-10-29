@@ -296,6 +296,7 @@ export default function HomePage() {
                 start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
                 end: { lat: -23.5505,lng: -46.6333, label: "Brazil" },
               },
+              ]}
             lineColor="#0ea5e9"
           />
         </div>
