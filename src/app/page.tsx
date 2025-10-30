@@ -10,10 +10,10 @@ import { FlowButton } from "@/components/ui/flow-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { WorldMap } from "@/components/ui/world-map";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
-import core1 from "@/components/public/core-1.webp";
-import core2 from "@/components/public/core-2.webp";
-import core3 from "@/components/public/core-3.webp";
-import core4 from "@/components/public/core-4.webp";
+import core1 from "@/public/core-1.webp";
+import core2 from "@/public/core-2.webp";
+import core3 from "@/public/core-3.webp";
+import core4 from "@/public/core-4.webp";
 
 
 const bentoFeatures = [
@@ -98,7 +98,7 @@ const featureStepsData = [
     content:
       "根据业务场景、并发量与预算，我们会为您匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
     image:
-      "/components/public/buzhou1.jpg",
+      "/public/buzhou1.jpg",
   },
   {
     step: "Step 2",
@@ -106,7 +106,7 @@ const featureStepsData = [
     content:
       "点击“控制台-令牌管理”，添加您的第一个密钥，这时您可以在“操练场”或“便捷对话“开始使用。",
     image:
-      "/components/public/buzhou2.gif",
+      "/public/buzhou2.gif",
   },
   {
     step: "Step 3",
