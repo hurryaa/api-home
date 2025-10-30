@@ -14,8 +14,8 @@ import core1 from "@/components/public/core-1.webp";
 import core2 from "@/components/public/core-2.webp";
 import core3 from "@/components/public/core-3.webp";
 import core4 from "@/components/public/core-4.webp";
-import core5 from "@/components/public/buzhou1.jpg";
-import core6 from "@/components/public/buzhou2.gif";
+import core5 from "@/components/public/buzhou1.jpg?url";
+import core6 from "@/components/public/buzhou2.gif?url";
 
 const bentoFeatures = [
   {
