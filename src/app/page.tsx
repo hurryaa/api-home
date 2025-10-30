@@ -10,10 +10,6 @@ import { FlowButton } from "@/components/ui/flow-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { WorldMap } from "@/components/ui/world-map";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
-import core1 from "@/public/core-1.webp";
-import core2 from "@/public/core-2.webp";
-import core3 from "@/public/core-3.webp";
-import core4 from "@/public/core-4.webp";
 
 
 const bentoFeatures = [
@@ -26,7 +22,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src={core1}
+        src="/core-1.webp"
         alt="AI gateway architecture"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
         fill
@@ -44,7 +40,7 @@ const bentoFeatures = [
     cta: "快速开始",
     background: (
       <Image
-        src={core2}
+        src="/core-2.webp"
         alt="Subscription dashboard"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -62,7 +58,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src={core3}
+        src="/core-3.webp"
         alt="Edge network operations"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
         fill
@@ -80,7 +76,7 @@ const bentoFeatures = [
     cta: "了解更多",
     background: (
       <Image
-        src={core4}
+        src="/core-4.webp"
         alt="Developers collaborating"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -98,7 +94,7 @@ const featureStepsData = [
     content:
       "根据业务场景、并发量与预算，我们会为您匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
     image:
-      "/public/buzhou1.jpg",
+      "/buzhou1.jpg",
   },
   {
     step: "Step 2",
@@ -106,7 +102,7 @@ const featureStepsData = [
     content:
       "点击“控制台-令牌管理”，添加您的第一个密钥，这时您可以在“操练场”或“便捷对话“开始使用。",
     image:
-      "/public/buzhou2.gif",
+      "/buzhou2.gif",
   },
   {
     step: "Step 3",
