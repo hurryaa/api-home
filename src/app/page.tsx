@@ -14,6 +14,7 @@ import core1 from "@/components/public/core-1.webp";
 import core2 from "@/components/public/core-2.webp";
 import core3 from "@/components/public/core-3.webp";
 import core4 from "@/components/public/core-4.webp";
+import core5 from "@/components/public/buzhou2.gif";
 
 const bentoFeatures = [
   {
@@ -105,7 +106,7 @@ const featureStepsData = [
     content:
       "点击“控制台-令牌管理”，添加您的第一个密钥，这时您可以在“操练场”或“便捷对话“开始使用。",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+      {core5},
   },
   {
     step: "Step 3",
