@@ -266,8 +266,8 @@ export default function HomePage() {
                 end: { lat: 51.5074, lng: -0.1278, label: "London" },
               },
               {
-                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
-                end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -26.2041,lng: 28.0473, label: "South Africa" },
               },
               {
                 start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
@@ -289,10 +289,7 @@ export default function HomePage() {
                 start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
                 end: { lat: 30.0444, lng: 31.2357, label: "Egypt" },
               },
-              {
-                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
-                end: { lat: -26.2041,lng: 28.0473, label: "South Africa" },
-              },
+              
               ]}
             lineColor="#0ea5e9"
           />
