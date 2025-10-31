@@ -110,7 +110,7 @@ const featureStepsData = [
     content:
       "查看“开发文档”，复制本站域名为API_base_url，您的密钥为API_Key",
     image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou4.png",
   },
   {
     step: "Step 4",
@@ -118,7 +118,7 @@ const featureStepsData = [
     content:
       "设置余额预警并保持关注，避免余额不足影响您的应用",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou5.png",
   },
 ];
 
@@ -139,7 +139,7 @@ const stats = [
     label: "全年可用性",
     value: "99.95%",
     description:
-      "多地域容灾、自动限流与智能路由确保关键业务稳定运行。",
+      "多地域容灾、自动协调与智能路由确保关键业务稳定运行。",
   },
 ];
 
@@ -153,7 +153,7 @@ const testimonials = [
   },
   {
     quote:
-      "从官方API迁移到APICore.ai只用了5分钟，每月节省了数万元的API、税费等费用。也规避了官方封号的风险，技术支持团队非常专业。",
+      "从官方API迁移到GPTW API只用了2分钟，每月节省了数万元的API、税费等费用。也规避了官方封号的风险，技术支持团队非常专业。",
     name: "赵雯",
     designation: "IT部门总监 · 科技行业",
     src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600&auto=format&fit=crop",
@@ -169,24 +169,24 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "如何快速接入大模型 API 网关？",
+    question: "GPTW API网关是如何计费的？",
     answer:
-      "填写业务信息后，我们会在 24 小时内反馈接入方案，并提供 SDK、Postman 集合及沙箱环境协助调试。",
+      "所有的AI大模型均依照消耗Tokens自动计费，以官方实际返回usage为准。每笔消耗均有详细计费明细账单",
   },
   {
-    question: "ChatGPT 订阅充值支持哪些套餐？",
+    question: "使用GPTW API时，数据会被泄露吗？",
     answer:
-      "支持 ChatGPT Plus、Team、Enterprise 等官方套餐，提供企业发票及灵活的月/年付费方式。",
+      "答案是不会的。GPTW API非常注重隐私安全，所有的数据都是端到端加密，不会泄露或用于模型训练，请放心使用。",
   },
   {
-    question: "国内镜像服务是否合规？",
+    question: "是否支持开具增值税发票/签订合同？",
     answer:
-      "镜像节点部署在合规 IDC，结合身份校验、日志审计与加密传输，满足企业与监管要求。",
+      "我们提供多种开票类型和合同类型，以满足不同客户的需求，详情请咨询在线客服提前沟通开票事宜。",
   },
   {
-    question: "Claude Code API 是否支持按量计费？",
+    question: "为什么通过API的回答比官网的回答简短？",
     answer:
-      "提供包月与按量两种模式，可根据项目阶段灵活切换，并支持团队级别的配额管理。",
+      "官方的对话页配置有一系列前置prompt，而通过API的对话是纯粹的模型本身，使用API时您可以自行设置前置prompt以满足不同的需求。",
   },
 ];
 
@@ -206,7 +206,7 @@ export default function HomePage() {
       >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            打造企业级 AI 服务矩阵
+            企业级 AI 服务矩阵
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             围绕大模型 API 网关、ChatGPT 订阅充值、国内镜像与 Claude Code API 供应，提供覆盖采购、接入、运营的全链路服务。
@@ -338,7 +338,7 @@ export default function HomePage() {
       <footer className="border-t border-border/80 bg-background/95 px-6 py-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 text-center md:flex-row md:items-center md:justify-between">
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Orbit AI Gateway · 汇聚全球智算能力，助力企业安全合规地落地大模型。
+            © {new Date().getFullYear()} GPTW Orbit AI Gateway · 汇聚全球智算能力，助力企业安全合规地落地大模型。
           </div>
           <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
             <Compass className="h-4 w-4" />
