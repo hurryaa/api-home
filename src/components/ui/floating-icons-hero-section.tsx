@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { FlowButton } from "@/components/ui/flow-button";
 import { MorphingText } from "@/components/ui/morphing-text";
 import { cn } from "@/lib/utils";
 
@@ -96,7 +96,7 @@ const Icon = ({
       className={cn("absolute", iconData.className)}
     >
       <motion.div
-        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-white/20 bg-white p-3 shadow-xl backdrop-blur-md md:h-20 md:w-20"
+        className="flex h-16 w-16 items-center justify-center rounded-3xl border border-border/40 bg-white p-3 text-slate-900 shadow-xl backdrop-blur-md dark:border-white/30 dark:bg-white dark:text-slate-900 dark:shadow-2xl md:h-20 md:w-20"
         animate={{
           y: [0, -8, 0, 8, 0],
           x: [0, 6, 0, -6, 0],
@@ -109,7 +109,7 @@ const Icon = ({
           ease: "easeInOut",
         }}
       >
-        <IconComponent className="h-8 w-8 md:h-10 md:w-10" />
+        <IconComponent className="h-8 w-8 text-inherit md:h-10 md:w-10" />
       </motion.div>
     </motion.div>
   );
@@ -214,16 +214,14 @@ const FloatingIconsHero = React.forwardRef<
           ) : null}
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <InteractiveHoverButton
+            <FlowButton
               text={ctaText}
               onClick={() => navigate(ctaHref)}
-              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground md:px-10"
             />
             {secondaryCtaText ? (
-              <InteractiveHoverButton
+              <FlowButton
                 text={secondaryCtaText}
                 onClick={() => navigate(secondaryCtaHref ?? "#")}
-                className="w-auto border border-primary/70 bg-transparent px-8 py-3 text-base text-primary md:px-10"
               />
             ) : null}
           </div>

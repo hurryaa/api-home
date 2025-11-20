@@ -6,13 +6,11 @@ import FloatingIconsHeroDemo from "@/components/sections/hero-demo";
 import { FeatureSteps } from "@/components/blocks/feature-section";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { FlowButton } from "@/components/ui/flow-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { WorldMap } from "@/components/ui/world-map";
 import { Code2, Compass, CreditCard, Globe2, Sparkles } from "lucide-react";
-import core1 from "@/components/public/core-1.webp";
-import core2 from "@/components/public/core-2.webp";
-import core3 from "@/components/public/core-3.webp";
-import core4 from "@/components/public/core-4.webp";
+
 
 const bentoFeatures = [
   {
@@ -24,7 +22,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src={core1}
+        src="/core-1.webp"
         alt="AI gateway architecture"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
         fill
@@ -42,7 +40,7 @@ const bentoFeatures = [
     cta: "快速开始",
     background: (
       <Image
-        src={core2}
+        src="/core-2.webp"
         alt="Subscription dashboard"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -60,7 +58,7 @@ const bentoFeatures = [
     cta: "立即注册",
     background: (
       <Image
-        src={core3}
+        src="/core-3.webp"
         alt="Edge network operations"
         className="absolute inset-0 h-full w-full object-cover opacity-60"
         fill
@@ -78,7 +76,7 @@ const bentoFeatures = [
     cta: "了解更多",
     background: (
       <Image
-        src={core4}
+        src="/core-4.webp"
         alt="Developers collaborating"
         className="absolute inset-0 h-full w-full object-cover opacity-65"
         fill
@@ -94,9 +92,9 @@ const featureStepsData = [
     step: "Step 1",
     title: "完成注册并添加客服微信",
     content:
-      "根据业务场景、并发量与预算，我们会为你匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
+      "根据业务场景、并发量与预算，我们会为您匹配最适合的模型组合与计费方案。同时方便沟通您所遇到的任何问题",
     image:
-      "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou1.jpg",
   },
   {
     step: "Step 2",
@@ -104,7 +102,7 @@ const featureStepsData = [
     content:
       "点击“控制台-令牌管理”，添加您的第一个密钥，这时您可以在“操练场”或“便捷对话“开始使用。",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou2.gif",
   },
   {
     step: "Step 3",
@@ -112,7 +110,7 @@ const featureStepsData = [
     content:
       "查看“开发文档”，复制本站域名为API_base_url，您的密钥为API_Key",
     image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou4.png",
   },
   {
     step: "Step 4",
@@ -120,7 +118,7 @@ const featureStepsData = [
     content:
       "设置余额预警并保持关注，避免余额不足影响您的应用",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop",
+      "/buzhou5.png",
   },
 ];
 
@@ -141,54 +139,54 @@ const stats = [
     label: "全年可用性",
     value: "99.95%",
     description:
-      "多地域容灾、自动限流与智能路由确保关键业务稳定运行。",
+      "多地域容灾、自动协调与智能路由确保关键业务稳定运行。",
   },
 ];
 
 const testimonials = [
   {
     quote:
-      "借助统一网关，我们在两周内完成了 6 个模型的灰度上线，语义客服的满意度提升了 31%。",
+      "GPTW API让我们的AI产品开发成本降低了70%。统一的API接口让我们能够快速切换不同的AI模型，而不需要修改代码。99.9%的可用性保障也让我们非常放心。真正做到了为开发者而生！",
     name: "李晨",
-    designation: "AI 平台负责人 · 北辰科技",
+    designation: "AI 平台负责人 · 科技行业",
     src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
-      "正版充值和账期结算帮助财务合规落地，镜像节点保障了海外模型在国内的超低时延。",
+      "从官方API迁移到GPTW API只用了2分钟，每月节省了数万元的API、税费等费用。也规避了官方封号的风险，技术支持团队非常专业。",
     name: "赵雯",
-    designation: "运营总监 · 星航出行",
+    designation: "IT部门总监 · 科技行业",
     src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600&auto=format&fit=crop",
   },
   {
     quote:
-      "Claude Code API 让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
+      "Claude Code让研发团队的协同效率翻倍，代码评审和多语言翻译都接入了自动化流程。",
     name: "郭远",
-    designation: "工程效能主管 · 灵动数云",
+    designation: "工程效能主管 · 教育培训行业",
     src: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
 const faqs = [
   {
-    question: "如何快速接入大模型 API 网关？",
+    question: "GPTW API网关是如何计费的？",
     answer:
-      "填写业务信息后，我们会在 24 小时内反馈接入方案，并提供 SDK、Postman 集合及沙箱环境协助调试。",
+      "所有的AI大模型均依照消耗Tokens自动计费，以官方实际返回usage为准。每笔消耗均有详细计费明细账单",
   },
   {
-    question: "ChatGPT 订阅充值支持哪些套餐？",
+    question: "使用GPTW API时，数据会被泄露吗？",
     answer:
-      "支持 ChatGPT Plus、Team、Enterprise 等官方套餐，提供企业发票及灵活的月/年付费方式。",
+      "答案是不会的。GPTW API非常注重隐私安全，所有的数据都是端到端加密，不会泄露或用于模型训练，请放心使用。",
   },
   {
-    question: "国内镜像服务是否合规？",
+    question: "是否支持开具增值税发票/签订合同？",
     answer:
-      "镜像节点部署在合规 IDC，结合身份校验、日志审计与加密传输，满足企业与监管要求。",
+      "我们提供多种开票类型和合同类型，以满足不同客户的需求，详情请咨询在线客服提前沟通开票事宜。",
   },
   {
-    question: "Claude Code API 是否支持按量计费？",
+    question: "为什么通过API的回答比官网的回答简短？",
     answer:
-      "提供包月与按量两种模式，可根据项目阶段灵活切换，并支持团队级别的配额管理。",
+      "官方的对话页配置有一系列前置prompt，而通过API的对话是纯粹的模型本身，使用API时您可以自行设置前置prompt以满足不同的需求。",
   },
 ];
 
@@ -208,7 +206,7 @@ export default function HomePage() {
       >
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            打造企业级 AI 服务矩阵
+            企业级 AI 服务矩阵
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             围绕大模型 API 网关、ChatGPT 订阅充值、国内镜像与 Claude Code API 供应，提供覆盖采购、接入、运营的全链路服务。
@@ -245,12 +243,65 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-muted/40 px-6 py-24">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="mb-12 space-y-4 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">全球基础设施保障</h2>
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              我们的平台在全球部署，提供99.9%可用性保障，为您提供低延迟、高可用的大模型服务。
+            </p>
+          </div>
+          <WorldMap
+            dots={[
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 37.7749, lng: -122.4194, label: "San Francisco" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 40.7128, lng: -74.0060, label: "New York" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 51.5074, lng: -0.1278, label: "London" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -26.2041,lng: 28.0473, label: "South Africa" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: -23.5505,lng: -46.6333, label: "Brazil" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" },
+                end: { lat: 55.7558, lng: 37.6173, label: "Moscow" },
+              },
+              {
+                start: { lat: 39.9042, lng: 116.4074, label: "BeiJing" }, 
+                end: { lat: 30.0444, lng: 31.2357, label: "Egypt" },
+              },
+              
+              ]}
+            lineColor="#0ea5e9"
+          />
+        </div>
+      </section>
+
       <section className="px-6 py-24">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-16">
           <div className="space-y-4 text-center">
             <h2 className="text-3xl font-bold md:text-4xl">客户案例与真实反馈</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              来自金融、出行、互联网等行业的头部团队，正在使用我们的服务加速 AI 能力落地。
+              来自科研、培训、互联网等行业的头部团队，正在使用我们的服务加速 AI 能力落地。
             </p>
           </div>
 
@@ -263,12 +314,11 @@ export default function HomePage() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold md:text-4xl">常见问题解答</h2>
             <p className="text-lg text-muted-foreground">
-              如果你正在评估大模型接入、订阅采购或镜像服务，这里汇总了最常见的咨询与答复。
+              如果您正在评估大模型接入，这里汇总了最常见的咨询与答复。
             </p>
-            <InteractiveHoverButton
-              text="联系顾问"
-              onClick={() => (window.location.href = "mailto:hello@orbit-ai.com")}
-              className="w-auto border-none bg-primary px-8 py-3 text-base text-primary-foreground"
+            <FlowButton
+              text="联系客服"
+              onClick={() => (window.location.href = "微信：office980")}
             />
           </div>
           <div className="space-y-6" id="contact">
@@ -285,7 +335,7 @@ export default function HomePage() {
       <footer className="border-t border-border/80 bg-background/95 px-6 py-10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 text-center md:flex-row md:items-center md:justify-between">
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Orbit AI Gateway · 汇聚全球智算能力，助力企业安全合规地落地大模型。
+            © {new Date().getFullYear()} GPTW Orbit AI Gateway · 汇聚全球智算能力，助力企业安全合规地落地大模型。
           </div>
           <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
             <Compass className="h-4 w-4" />
